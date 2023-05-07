@@ -7,9 +7,9 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="./" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-                        <a href="./about.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-                        <a href="./contact.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="./" class="<?= get_classname_from_uri('/') ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+                        <a href="./about.php" class="<?= get_classname_from_uri('/about.php') ?> rounded-md px-3 py-2 text-sm font-medium">About</a>
+                        <a href="./contact.php" class="<?= get_classname_from_uri('/contact.php') ?> rounded-md px-3 py-2 text-sm font-medium">Contact</a>
                     </div>
                 </div>
             </div>
