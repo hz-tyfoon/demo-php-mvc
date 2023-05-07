@@ -1,3 +1,5 @@
 <?php 
 
-require_once "about.view.php";
+$heading = "About";
+
+require_once "views/about.view.php";

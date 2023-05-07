@@ -1,3 +1,5 @@
 <?php 
 
-require_once "contact.view.php";
+$heading = "Contact";
+
+require_once "views/contact.view.php";

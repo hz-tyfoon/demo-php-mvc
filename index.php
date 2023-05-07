@@ -1,3 +1,5 @@
 <?php 
 
-require_once "index.view.php";
+$heading = "Home";
+
+require_once "views/index.view.php";
