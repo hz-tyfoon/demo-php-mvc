@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stacked UI</title>
-    <script src="../../assets/scripts/tailwind.main.js"></script>
+    <!-- <script src="../../assets/scripts/tailwind.main.js"></script> -->
+    <script src="../../assets/scripts/tailwind-with-forms.js"></script>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
