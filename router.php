@@ -3,13 +3,7 @@
 
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
-$routes = [
-    "/" => "controllers/index.php",
-    "/about" => "controllers/about.php",
-    "/contact" => "controllers/contact.php",
-    "/posts" => "controllers/posts.php",
-    "/post" => "controllers/post.php",
-];
+$routes = require "routes.php";
 
 function route_to_controller($uri, $routes){
     if(array_key_exists($uri, $routes)){
