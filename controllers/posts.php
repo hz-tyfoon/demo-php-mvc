@@ -8,6 +8,6 @@ $config = require "./config.php";
 $user_id = 3;
 
 $db = new Database($config['database']);
-$posts = $db->query("select * from posts where user_id = :user_id", ['user_id' => $user_id])->fetchAll();
+$posts = $db->query("select * from posts where user_id = :user_id", ['user_id' => $user_id])->getAll();
 
 require_once "views/posts.view.php";
