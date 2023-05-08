@@ -7,10 +7,10 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="./" class="<?= get_classname_from_uri_path('/') ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-                        <a href="./posts" class="<?= get_classname_from_uri_path('/posts') ?> rounded-md px-3 py-2 text-sm font-medium">posts</a>
-                        <a href="./about" class="<?= get_classname_from_uri_path('/about') ?> rounded-md px-3 py-2 text-sm font-medium">About</a>
-                        <a href="./contact" class="<?= get_classname_from_uri_path('/contact') ?> rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="/" class="<?= get_classname_from_uri_path('/') ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+                        <a href="/posts" class="<?= get_classname_from_uri_path('/posts') ?> rounded-md px-3 py-2 text-sm font-medium">posts</a>
+                        <a href="/about" class="<?= get_classname_from_uri_path('/about') ?> rounded-md px-3 py-2 text-sm font-medium">About</a>
+                        <a href="/contact" class="<?= get_classname_from_uri_path('/contact') ?> rounded-md px-3 py-2 text-sm font-medium">Contact</a>
                     </div>
                 </div>
             </div>
