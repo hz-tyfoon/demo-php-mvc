@@ -4,6 +4,8 @@ require "Validator.php";
 
 $heading = "Create New Post";
 
+// dd(Validator::email("hanzalawpdeveloper.com"));
+
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     $config = require "./config.php";
     $db = new Database($config['database']);
