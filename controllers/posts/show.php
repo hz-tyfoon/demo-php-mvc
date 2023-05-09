@@ -13,4 +13,4 @@ $post = $db->query("select * from posts where id = :id", ['id' => $id])->findOrF
 
 authorize( $post['user_id'] === $user_id );
 
-require_once "views/post.view.php";
+require_once "views/posts/show.view.php";

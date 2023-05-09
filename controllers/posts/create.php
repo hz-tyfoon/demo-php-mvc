@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     $config = require "./config.php";
     $db = new Database($config['database']);
     
-    $user_id = 3;
+    $user_id = 5;
     $title = $_POST['title'];
 
     $errors = [];
@@ -26,4 +26,4 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 }
 
-require_once "views/posts-create.view.php";
+require_once "views/posts/create.view.php";

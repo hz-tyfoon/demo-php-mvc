@@ -5,9 +5,9 @@ $heading = "My posts";
 
 $config = require "./config.php";
 
-$user_id = 3;
+$user_id = 5;
 
 $db = new Database($config['database']);
 $posts = $db->query("select * from posts where user_id = :user_id", ['user_id' => $user_id])->getAll();
 
-require_once "views/posts.view.php";
+require_once "views/posts/index.view.php";
