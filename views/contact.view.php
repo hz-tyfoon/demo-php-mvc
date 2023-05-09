@@ -1,9 +1,11 @@
-<?php require 'partials/header.php' ?>
-<?php require 'partials/nav.php' ?>
-<?php require 'partials/banner.php' ?>    
+<?php require basePath('views/partials/header.php') ?>
+<?php require basePath('views/partials/nav.php') ?>
+<?php require basePath('views/partials/banner.php') ?>
+
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        Contact Page
+    Contact Page
     </div>
 </main>
-<?php require 'partials/footer.php' ?>
+
+<?php require basePath('views/partials/footer.php') ?>

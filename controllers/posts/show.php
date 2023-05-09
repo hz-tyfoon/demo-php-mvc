@@ -1,9 +1,6 @@
 <?php 
 
-$heading = "Single post";
-
-
-$config = require "./config.php";
+$config = require basePath("config.php");
 
 $id = $_GET["id"];
 $user_id = 3;
@@ -13,4 +10,7 @@ $post = $db->query("select * from posts where id = :id", ['id' => $id])->findOrF
 
 authorize( $post['user_id'] === $user_id );
 
-require_once "views/posts/show.view.php";
+view("posts/show.view.php", [
+    "heading" => "Single post",
+    "post" => $post,
+]);

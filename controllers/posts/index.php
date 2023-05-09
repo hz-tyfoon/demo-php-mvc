@@ -1,13 +1,14 @@
 <?php 
 
-$heading = "My posts";
 
-
-$config = require "./config.php";
+$config = require basePath("config.php");
 
 $user_id = 5;
 
 $db = new Database($config['database']);
 $posts = $db->query("select * from posts where user_id = :user_id", ['user_id' => $user_id])->getAll();
 
-require_once "views/posts/index.view.php";
+view("posts/index.view.php", [
+    "heading" => "My posts",
+    "posts" => $posts,
+]);
