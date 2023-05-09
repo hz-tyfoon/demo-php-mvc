@@ -1,5 +1,7 @@
 <?php 
 
+use Core\Request;
+
 function dd($value){
 
     dump($value);
