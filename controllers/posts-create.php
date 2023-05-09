@@ -8,7 +8,20 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     
     $user_id = 3;
     $title = $_POST['title'];
-    $posts = $db->query("INSERT INTO `demo-mvc`.`posts` (`title`, `user_id`) VALUES (:title, :user_id)", ['title' => $title, 'user_id' => $user_id]);
+
+    $errors = [];
+
+    if(strlen(trim($title)) === 0){
+        $errors['title'] = "title cannot be empty";
+    }
+
+    if(strlen(trim($title)) > 300){
+        $errors['title'] = "title cannot be more than 300 charecters";
+    }
+
+    if(empty($errors)){
+        $db->query("INSERT INTO `demo-mvc`.`posts` (`title`, `user_id`) VALUES (:title, :user_id)", ['title' => $title, 'user_id' => $user_id]);
+    }
 
 }
 
