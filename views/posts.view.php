@@ -5,7 +5,7 @@
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <ul class="mb-12">
         <?php foreach ($posts as $key => $post) : ?>
-            <li class="mb-2" ><a class="text-blue-500 hover:underline" href="post?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></li>
+            <li class="mb-2" ><a class="text-blue-500 hover:underline" href="post?id=<?= $post['id'] ?>"><?=  htmlspecialchars( $post['title'] ); ?></a></li>
         <?php endforeach; ?>
         </ul>
 
