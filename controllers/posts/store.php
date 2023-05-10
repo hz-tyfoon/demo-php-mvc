@@ -1,16 +1,15 @@
 <?php
 
-use Core\Database;
+use Core\App;
 use Core\Validator;
+
+$db = App::resolve(\Core\Database::class);
 
 require basePath("Core/Validator.php");
 
 $errors = [];
 
-$config = require basePath("config.php");
-$db = new Database($config['database']);
-
-$user_id = 5;
+$user_id = 3;
 $title = $_POST['title'];
 
 if (!Validator::string($title, 1, 300)) {

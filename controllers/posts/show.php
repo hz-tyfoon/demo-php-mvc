@@ -1,13 +1,12 @@
 <?php 
 
-use Core\Database;
+use Core\App;
 
-$config = require basePath("config.php");
+$db = App::resolve(\Core\Database::class);
 
 $id = $_GET["id"];
-$user_id = 5;
+$user_id = 3;
 
-$db = new Database($config['database']);
 $post = $db->query("select * from posts where id = :id", ['id' => $id])->findOrFail();
 
 authorize( $post['user_id'] === $user_id );

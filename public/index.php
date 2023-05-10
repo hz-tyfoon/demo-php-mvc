@@ -13,4 +13,5 @@ spl_autoload_register(function($class){
     require_once basePath("{$class}.php");
 });
 
+require_once basePath("bootstrap.php");
 require_once basePath("index.php");
