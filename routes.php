@@ -7,3 +7,4 @@ $router->get("/posts", "controllers/posts/index.php");
 $router->get("/posts/create", "controllers/posts/create.php");
 $router->post("/posts/create", "controllers/posts/create.php");
 $router->get("/post", "controllers/posts/show.php");
+$router->delete("/post", "controllers/posts/destroy.php");
