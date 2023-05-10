@@ -5,8 +5,6 @@ use Core\Validator;
 
 $db = App::resolve(\Core\Database::class);
 
-require basePath("Core/Validator.php");
-
 $errors = [];
 
 $user_id = 3;
