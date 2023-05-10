@@ -45,3 +45,11 @@ function view($path, $attributes = []){
     
     require basePath("views/" . $path);
 }
+
+function abort($code = 404){
+    http_response_code($code);
+    
+    view("{$code}.php");
+    
+    die();
+}

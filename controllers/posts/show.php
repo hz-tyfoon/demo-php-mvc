@@ -5,7 +5,7 @@ use Core\Database;
 $config = require basePath("config.php");
 
 $id = $_GET["id"];
-$user_id = 3;
+$user_id = 5;
 
 $db = new Database($config['database']);
 $post = $db->query("select * from posts where id = :id", ['id' => $id])->findOrFail();
