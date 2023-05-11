@@ -7,5 +7,8 @@ return [
         'dbname'    => 'demo-mvc',
         'charset'   => 'utf8mb4',
     ],
-    // some other config can go here
+    'db_user_pass' => [
+        'username'    => 'root',
+        'password'    => '',
+    ]
 ];
