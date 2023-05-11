@@ -1,7 +1,7 @@
-
-
+<?php $base_uri = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/' ?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>To do list App</title>
   <style>
@@ -9,8 +9,10 @@
       font-family: Arial, sans-serif;
     }
 
-    h1 {
+    h1.top-head {
       text-align: center;
+      font-size: 30px;
+      font-weight: 800;
     }
 
     .task-list {
@@ -20,8 +22,6 @@
 
     .task-item {
       border: 1px solid #ccc;
-      margin-bottom: 10px;
-      padding: 10px;
     }
 
     .task-item .title {
@@ -32,12 +32,7 @@
       color: red;
     }
 
-    .task-item .description {
-      margin-top: 5px;
-    }
-
     .task-item .deadline {
-      margin-top: 5px;
       font-size: 0.9em;
     }
 
@@ -45,26 +40,14 @@
       margin-top: 5px;
     }
 
-    .add-task-form {
-      margin-top: 20px;
-    }
-
     .add-task-form input[type="text"],
     .add-task-form input[type="date"] {
       width: 200px;
-      padding: 5px;
-      margin-right: 10px;
     }
-
-    .add-task-form button {
-      padding: 5px 10px;
-    }
-
     .delete-button {
       background-color: #ff0000;
       color: #fff;
       border: none;
-      padding: 5px 10px;
       cursor: pointer;
     }
 
@@ -72,8 +55,12 @@
       margin-right: 5px;
     }
   </style>
+
+  <!-- <script src="https://cdn.tailwindcss.com?plugins=forms"></script> -->
+  <script src="<?php echo $base_uri ?>assets/scripts/tailwind-with-forms.js"></script>
+
 </head>
 
 
 <body>
-  <h1>To do list App</h1>
+  <h1 class="top-head my-5">To do list</h1>
