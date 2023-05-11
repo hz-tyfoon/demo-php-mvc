@@ -14,6 +14,9 @@
             margin-bottom: 10px;
         }
 
+        input{
+            margin-bottom: 20px;
+        }
         input[type="text"],
         input[type="password"] {
             width: 250px;
@@ -33,7 +36,7 @@
 
 <body>
     <h1>Database Connection Form</h1>
-    <form>
+    <form action="/setup-config" method="post">
         <label for="host">Host:</label>
         <input type="text" id="host" name="host" required>
 
@@ -47,7 +50,7 @@
         <input type="text" id="username" name="username" required>
 
         <label for="password">Database Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password">
         
         <label>
             <input type="submit" value="Connect">

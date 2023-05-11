@@ -10,6 +10,6 @@ App::setContainer($container);
 
 App::bind(\Core\Database::class, function(){
     $config = require basePath("config.php");
-    return new Database($config['database']);
+    return new Database($config['database'], $config['db_user_pass']['username'], $config['db_user_pass']['password']);
 });
 
