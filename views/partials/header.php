@@ -41,8 +41,9 @@
     }
 
     .add-task-form input[type="text"],
+    .add-task-form textarea,
     .add-task-form input[type="date"] {
-      width: 200px;
+      width: 700px;
     }
     .delete-button {
       background-color: #ff0000;
