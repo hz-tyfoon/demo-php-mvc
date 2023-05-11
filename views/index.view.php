@@ -25,7 +25,9 @@
 </form>
 
 <ul class="task-list mb-10">
-    <?php foreach ($todos as $key => $todo) : 
+    <?php 
+    $todos = array_reverse($todos);
+    foreach ($todos as $key => $todo) : 
         $todo_id = $todo['id'];
         ?>
         <li class="task-item p-5">
