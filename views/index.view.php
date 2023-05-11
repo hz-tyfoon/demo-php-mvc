@@ -24,7 +24,7 @@
 <form class="add-task-form px-5 my-10" method="post" action="/" >
     <input name="title" type="text" placeholder="Task Title" id="title-input" >
     <input name="description" type="text" placeholder="Description" id="description-input" >
-    <input name="deadline" type="date" id="deadline-input" >
+    <input name="deadline_date_time" type="datetime-local" id="deadline_date_time" >
     <button type="submit">Add Task</button>
     <?php if(isset($errors['title'])): ?>
         <p class="text-red-600 mt-5"><?php echo $errors['title']; ?></p>
