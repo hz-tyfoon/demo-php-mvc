@@ -26,6 +26,19 @@ if(!file_exists($config_file)){
     }
     try {
         $connection = new PDO("mysql:host={$_POST['host']};port={$_POST['port']};dbname={$_POST['dbname']}", $_POST['username'], $_POST['password']);
+        $createTableQuery = "
+            CREATE TABLE IF NOT EXISTS todos (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                description TEXT,
+                deadline DATETIME,
+                completed TINYINT(1) DEFAULT 0,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            )
+        ";
+        $createTableStatement = $connection->prepare($createTableQuery);
+        $createTableStatement->execute();
         $connection = null;
     } catch (PDOException $e) {
         die("Connection failed: " . $e->getMessage());
