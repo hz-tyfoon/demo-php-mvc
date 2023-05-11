@@ -17,6 +17,12 @@ if(!file_exists($config_file)){
     if( ! ( $request_method === "POST" && $path === "setup-config") ){
         return view("setup_config.view.php");
     }
+    try {
+        $connection = new PDO("mysql:host={$_POST['host']};port={$_POST['port']};dbname={$_POST['dbname']}", $_POST['username'], $_POST['password']);
+        $connection = null;
+    } catch (PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
+    }
     $handle = fopen($config_file, 'w');
     if ($handle === false) {
         echo "Failed to create the file.";
