@@ -41,7 +41,7 @@
                     <input type="checkbox" class="checkmark mr-2" id="task_<?php echo $todo_id ?>" onclick="handleCheckBoxClick(this, <?php echo $todo_id ?>);">
                     Completed
                 </label>
-                <button onclick="hanldeDeleteTaksItem($todo_id)" class="delete-button mx-5 py-2 px-5">Delete</button>
+                <button onclick="confirmDeleteTaksItem(<?php echo $todo_id ?>)" class="delete-button mx-5 py-2 px-5">Delete</button>
             </div>
         </li>
     <?php endforeach; ?>
