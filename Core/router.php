@@ -32,7 +32,17 @@ class Router{
     public function route($uri, $method){
         foreach ($this->routes as $key => $route) {
 
-            if($route['uri'] === $uri && $route['method'] === strtoupper($method)){
+            $method = strtoupper($method);
+            if($route['uri'] === $uri && $route['method'] === $method){
+                return require basePath($route['controller']);
+            }
+
+            if( ! ( $method === 'DELETE' || $method === 'PATCH' ) ){
+                continue;
+            }
+
+            $pattern = "~^" . preg_quote($route['uri'], '~') . "/\d{1,9}$~";
+            if (preg_match($pattern, $uri) && $route['method'] === $method) {
                 return require basePath($route['controller']);
             }
 
