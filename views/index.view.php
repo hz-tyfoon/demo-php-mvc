@@ -19,11 +19,9 @@
                     Completed
                 </label>
                 <button class="cursor-pointer border-none mx-5 py-2 px-5 rounded bg-red-600 text-white" onclick="confirmDeleteTaksItem(this, <?php echo $todo_id ?>)">Delete</button>
-                <form action="/todos/<?php echo $todo_id ?>" method="post">
-                    <input type="hidden" name="__request_method" value="PATCH">
-                    <button type="submit" class="cursor-pointer border-none mx-5 py-2 px-5 rounded bg-sky-600 text-white" >Edit</button>
-                </form>
-
+                <a class="cursor-pointer border-none mx-5 py-2 px-5 rounded bg-sky-600 text-white" href="/todos/edit?id=<?php echo $todo_id ?>">
+                    Edit
+                </a>
             </div>
         </li>
     <?php endforeach; ?>
