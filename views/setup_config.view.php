@@ -1,40 +1,13 @@
+<?php $base_uri = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/' ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Database Connection Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input{
-            margin-bottom: 20px;
-        }
-        input[type="text"],
-        input[type="password"] {
-            width: 250px;
-            padding: 5px;
-        }
-
-        input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="<?php echo $base_uri ?>assets/css/db-config.css">
 </head>
 
-<body>
+<body class="db-setup-config" >
     <h1>Database Connection Form</h1>
     <form action="/setup-config" method="post">
         <label for="host">Host:</label>

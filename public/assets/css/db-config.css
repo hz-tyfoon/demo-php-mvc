@@ -1,0 +1,23 @@
+body.db-setup-config {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+body.db-setup-config label {
+  display: block;
+  margin-bottom: 10px;
+}
+body.db-setup-config input {
+  margin-bottom: 20px;
+}
+body.db-setup-config input[type=text], body.db-setup-config input[type=password] {
+  width: 250px;
+  padding: 5px;
+}
+body.db-setup-config input[type=submit] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}/*# sourceMappingURL=db-config.css.map */
