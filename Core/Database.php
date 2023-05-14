@@ -18,8 +18,7 @@ class Database {
     }
 
     public function query($query, $params = []){
-        $this->statement = $this->connection->prepare($query);
-        $this->statement->execute($params);
+        $this->executeQuery($query, $params);
         return $this;
     }
 
@@ -33,6 +32,11 @@ class Database {
     
     public function getAll(){
         return $this->statement->fetchAll();
+    }
+    
+    public function executeQuery($query, $params = []){
+        $this->statement = $this->connection->prepare($query);
+        return $this->statement->execute($params);
     }
 }
 
