@@ -28,7 +28,7 @@ class SetupConfig
         }
 
         $host = isset($_POST['host']) ? $_POST['host'] : "";
-        $port = isset($_POST['port']) ? $_POST['port'] : "";
+        $port = isset($_POST['port']) ? $_POST['port'] : "3306";
         $dbname = isset($_POST['dbname']) ? $_POST['dbname'] : "";
         $dbUser = isset($_POST['username']) ? $_POST['username'] : ""; 
         $dbPass = isset($_POST['password']) ? $_POST['password'] : "";

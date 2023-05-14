@@ -41,7 +41,7 @@
         <input type="text" id="host" name="host" required>
 
         <label for="port">Port:</label>
-        <input type="text" id="port" name="port" required>
+        <input type="text" id="port" name="port">
 
         <label for="dbname">Database Name:</label>
         <input type="text" id="dbname" name="dbname" required>
