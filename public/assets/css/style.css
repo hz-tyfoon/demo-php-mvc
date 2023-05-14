@@ -16,19 +16,15 @@ h1.top-head {
 .task-item {
   border: 1px solid #ccc;
 }
-
 .task-item .title {
   font-weight: bold;
 }
-
 .task-item .expired {
   color: red;
 }
-
 .task-item .deadline {
   font-size: 0.9em;
 }
-
 .task-item .actions {
   margin-top: 5px;
 }
