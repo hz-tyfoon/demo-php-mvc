@@ -4,14 +4,8 @@
 const BASE_PATH = __DIR__ . "/.." ;
 
 require BASE_PATH . "/Core/functions.php";
-// dd(BASE_PATH);
 
-spl_autoload_register(function($class){
-    
-    $class = str_replace("\\", "/", $class);
-
-    require_once basePath("{$class}.php");
-});
+require BASE_PATH . '/vendor/autoload.php';
 
 $config_file = basePath("config.php");
 if(!file_exists($config_file)){

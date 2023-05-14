@@ -1,0 +1,15 @@
+{
+    "name": "invizo/demo-php-mvc",
+    "authors": [
+        {
+            "name": "hz-tyfoon",
+            "email": "md.tifun@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "Core\\": "Core/"
+        }
+    }
+}
