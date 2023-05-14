@@ -19,6 +19,11 @@
                     Completed
                 </label>
                 <button onclick="confirmDeleteTaksItem(this, <?php echo $todo_id ?>)" class="delete-button mx-5 py-2 px-5">Delete</button>
+                <form action="/todos/<?php echo $todo_id ?>" method="post">
+                    <input type="hidden" name="__request_method" value="PATCH">
+                    <button type="submit" class="mx-5 py-2 px-5" >Edit</button>
+                </form>
+
             </div>
         </li>
     <?php endforeach; ?>

@@ -41,8 +41,9 @@ class Router{
                 continue;
             }
 
-            $pattern = "~^" . preg_quote($route['uri'], '~') . "/\d{1,9}$~";
-            if (preg_match($pattern, $uri) && $route['method'] === $method) {
+            $pattern = "~^" . preg_quote($route['uri'], '~') . "/(\d{1,9})$~";
+            if (preg_match($pattern, $uri, $matches) && $route['method'] === $method) {
+                $id = $matches[1];
                 return require basePath($route['controller']);
             }
 
