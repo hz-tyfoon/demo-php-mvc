@@ -1,7 +1,7 @@
 <?php
 
 namespace Core;
-use PDO, PDOException;
+use PDOException;
 
 /**
  * Class SetupConfig
@@ -24,18 +24,17 @@ class SetupConfig
         }
 
         if (!($request_method === "POST" && $path === "setup-config")) {
-            $this->showSetupConfigView();
-            return;
+            return $this->showSetupConfigView();
         }
 
+        $host = isset($_POST['host']) ? $_POST['host'] : "";
+        $port = isset($_POST['port']) ? $_POST['port'] : "";
+        $dbname = isset($_POST['dbname']) ? $_POST['dbname'] : "";
+        $dbUser = isset($_POST['username']) ? $_POST['username'] : ""; 
+        $dbPass = isset($_POST['password']) ? $_POST['password'] : "";
+
         try {
-            $connection = new PDO(
-                "mysql:host={$_POST['host']};port={$_POST['port']};dbname={$_POST['dbname']}",
-                $_POST['username'],
-                $_POST['password']
-            );
-            $createTableQuery = "
-                CREATE TABLE IF NOT EXISTS todos (
+            $createTableQuery = "CREATE TABLE IF NOT EXISTS todos (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     title VARCHAR(255) NOT NULL,
                     description TEXT,
@@ -43,11 +42,15 @@ class SetupConfig
                     completed TINYINT(1) DEFAULT 0,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-                )
-            ";
-            $createTableStatement = $connection->prepare($createTableQuery);
-            $createTableStatement->execute();
-            $connection = null;
+            )";
+            $config_data = [
+                'host'      => $host,
+                'port'      => $port,
+                'dbname'    => $dbname,
+                'charset'   => 'utf8mb4',
+            ];
+            $connection = new Database($config_data, $dbUser, $dbPass);
+            $connection->query($createTableQuery);
         } catch (PDOException $e) {
             die("Connection failed: " . $e->getMessage());
         }
@@ -60,14 +63,14 @@ class SetupConfig
             $phpCode = "<?php\n";
             $phpCode .= "return [
                 'database'  => [
-                    'host'      => '{$_POST['host']}',
-                    'port'      => '{$_POST['port']}',
-                    'dbname'    => '{$_POST['dbname']}',
+                    'host'      => '{$host}',
+                    'port'      => '{$port}',
+                    'dbname'    => '{$dbname}',
                     'charset'   => 'utf8mb4',
                 ],
                 'db_user_pass' => [
-                    'username'    => '{$_POST['username']}',
-                    'password'    => '{$_POST['password']}',
+                    'username'    => '{$dbUser}',
+                    'password'    => '{$dbPass}',
                 ]
             ]; \n";
             fwrite($handle, $phpCode);
