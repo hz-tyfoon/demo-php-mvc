@@ -18,10 +18,10 @@
                     <input type="checkbox" class="checkmark mr-2" id="task_<?php echo $todo_id ?>" onclick="handleCheckBoxClick(this, <?php echo $todo_id ?>);">
                     Completed
                 </label>
-                <button onclick="confirmDeleteTaksItem(this, <?php echo $todo_id ?>)" class="delete-button mx-5 py-2 px-5">Delete</button>
+                <button class="cursor-pointer border-none mx-5 py-2 px-5 rounded bg-red-600 text-white" onclick="confirmDeleteTaksItem(this, <?php echo $todo_id ?>)">Delete</button>
                 <form action="/todos/<?php echo $todo_id ?>" method="post">
                     <input type="hidden" name="__request_method" value="PATCH">
-                    <button type="submit" class="mx-5 py-2 px-5" >Edit</button>
+                    <button type="submit" class="cursor-pointer border-none mx-5 py-2 px-5 rounded bg-sky-600 text-white" >Edit</button>
                 </form>
 
             </div>
